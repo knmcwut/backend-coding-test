@@ -1,10 +1,13 @@
 'use strict';
 
 const express = require('express');
+const cors = require('cors');
 const app = express();
 
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
+
+app.use(cors());
 
 module.exports = (db) => {
     app.get('/health', (req, res) => res.send('Healthy'));
@@ -21,7 +24,7 @@ module.exports = (db) => {
         if (startLatitude < -90 || startLatitude > 90 || startLongitude < -180 || startLongitude > 180) {
             return res.send({
                 error_code: 'VALIDATION_ERROR',
-                message: 'Start latitude and longitude must be between -90 - 90 and -180 to 180 degrees respectively'
+                message: 'Start latitude and longitude must be between -90 to 90 and -180 to 180 degrees respectively'
             });
         }
 
