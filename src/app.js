@@ -7,10 +7,15 @@ const app = express();
 const bodyParser = require('body-parser');
 const jsonParser = bodyParser.json();
 
+const swaggerUI = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
+
 app.use(cors());
 
 module.exports = (db) => {
     app.get('/health', (req, res) => res.send('Healthy'));
+
+    app.use('/api-docs/v1', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
     app.post('/rides', jsonParser, (req, res) => {
         const startLatitude = Number(req.body.start_lat);
