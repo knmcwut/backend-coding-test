@@ -7,8 +7,9 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha tests",
-    "start": "node index.js"
+    "start": "node index.js",
+    "test": "mocha",
+    "coverage": "nyc npm run test"
   },
   "keywords": [
     "Xendit"
@@ -27,6 +28,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^5.1.0",
     "mocha": "^6.1.4",
+    "nyc": "^15.1.0",
     "supertest": "^4.0.2"
   }
 }
