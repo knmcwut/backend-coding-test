@@ -9,7 +9,7 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha tests/",
-    "coverage": "nyc --reporter=text npm run test"
+    "coverage": "nyc --reporter=lcov --reporter=text npm run test"
   },
   "keywords": [
     "Xendit"
