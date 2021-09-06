@@ -8,8 +8,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "test": "mocha",
-    "coverage": "nyc npm run test"
+    "test": "mocha tests/",
+    "coverage": "nyc --reporter=text npm run test"
   },
   "keywords": [
     "Xendit"
