@@ -10,3 +10,6 @@ EDIT4: added swagger documentation for rides api v1
 EDIT5: added ESLint in tooling
 
 EDIT6: added nyc for code coverage  
+
+EDIT7: still figuring out nyc code coverage. low results (around 30%)
+
